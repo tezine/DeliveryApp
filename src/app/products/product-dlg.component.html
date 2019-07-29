@@ -1,0 +1,73 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>Selecione as opções abaixo</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list style="margin: auto;width: 80%">
+        <ion-item justify-content-center lines="none">
+            <ion-text color="primary">
+                <h1>{{eProduct.name}}</h1>
+            </ion-text>
+        </ion-item>
+        <ion-item lines="none">
+            <ion-note text-wrap>
+                {{eProduct.brief}}
+            </ion-note>
+        </ion-item>
+        <ion-item >
+            <ion-label position="floating">Quantidade</ion-label>
+            <ion-select cancelText="Cancelar" okText="OK" [(ngModel)]="eProductInBasket.quantity">
+                <ion-select-option *ngFor="let quantity of quantityList" [value] = "eProductInBasket.id">{{quantity}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item *ngIf="eProduct.option1ParentGroupID">
+            <ion-label position="floating">{{eProduct.option1ParentGroupName}}</ion-label>
+            <ion-select cancelText="Cancelar" okText="OK" [(ngModel)]="eProductInBasket.option1ID">
+                <ion-select-option *ngFor="let childOption1 of childOptions1" [value] = "childOption1.id">{{getOptionNameWithPrice(childOption1)}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item *ngIf="eProduct.option2ParentGroupID">
+            <ion-label position="floating">{{eProduct.option2ParentGroupName}}</ion-label>
+            <ion-select cancelText="Cancelar" okText="OK" [(ngModel)]="eProductInBasket.option2ID">
+                <ion-select-option *ngFor="let childOption2 of childOptions2" [value] = "childOption2.id">{{getOptionNameWithPrice(childOption2)}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item *ngIf="eProduct.addon1ParentGroupID">
+            <ion-label position="floating">{{eProduct.addon1ParentGroupName}}</ion-label>
+            <ion-select cancelText="Cancelar" okText="OK" [(ngModel)]="eProductInBasket.addon1ID">
+                <ion-select-option *ngFor="let childAddon1 of childAddons1" [value] = "childAddon1.id">{{childAddon1.name}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item *ngIf="eProduct.addon2ParentGroupID">
+            <ion-label position="floating">{{eProduct.addon2ParentGroupName}}</ion-label>
+            <ion-select cancelText="Cancelar" okText="OK" [(ngModel)]="eProductInBasket.addon2ID">
+                <ion-select-option *ngFor="let childAddon2 of childAddons2" [value] = "childAddon2.id">{{childAddon2.name}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item *ngIf="eProduct.addon3ParentGroupID">
+            <ion-label position="floating">{{eProduct.addon3ParentGroupName}}</ion-label>
+            <ion-select cancelText="Cancelar" okText="OK" [(ngModel)]="eProductInBasket.addon3ID">
+                <ion-select-option *ngFor="let childAddon3 of childAddons3" [value] = "childAddon3.id">{{childAddon3.name}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Observações</ion-label>
+            <ion-input [(ngModel)]="eProductInBasket.comments"></ion-input>
+        </ion-item>
+        <ion-item style="margin-top: 30px" no-padding no-margin lines="none">
+            <ion-grid no-padding>
+                <ion-row>
+                    <ion-col>
+                        <ion-button (click)="onBtnCancelClicked()" color="danger" fill="clear">Cancelar</ion-button>
+                    </ion-col>
+                    <ion-col>
+                        <ion-button (click)="onBtnAddClicked()" color="success" float-end fill="clear">Adicionar</ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-list>
+</ion-content>

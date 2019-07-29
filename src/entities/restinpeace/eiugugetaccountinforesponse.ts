@@ -1,0 +1,57 @@
+
+import {EIuguConfiguration} from './eiuguconfiguration';
+import {EIuguInformation} from './eiuguinformation';
+
+export class EIuguGetAccountInfoResponse{
+	id:string;
+	name:string;
+	is_verified?:boolean;
+	created_at:string;
+	updated_at:string;
+	last_verification_request_status:string;
+	last_verification_request_data:object;
+	last_verification_request_feedback:object;
+	change_plan_type:number;
+	subscriptions_trial_period:number;
+	subscriptions_billing_days:object;
+	disable_emails:boolean;
+	last_withdraw:object;
+	reply_to:string;
+	webapp_on_test_mode:boolean;
+	marketplace:boolean;
+	default_return_url:object;
+	credit_card_verified?:boolean;
+	fines?:boolean;
+	late_payment_fine?:number;
+	per_day_interest?:boolean;
+	old_advancement:boolean;
+	early_payment_discount?:boolean;
+	early_payment_discount_days:object;
+	early_payment_discount_percent:object;
+	auto_withdraw:boolean;
+	payment_email_notification:boolean;
+	payment_email_notification_receiver:string;
+	auto_advance?:boolean;
+	auto_advance_type:object;
+	auto_advance_option?:number;
+	balance:string;
+	balance_in_protest:string;
+	balance_available_for_withdraw:string;
+	protected_balance:string;
+	payable_balance:string;
+	receivable_balance:string;
+	commission_balance:string;
+	volume_last_month:string;
+	volume_this_month:string;
+	total_subscriptions:number;
+	total_active_subscriptions:number;
+	taxes_paid_last_month:string;
+	taxes_paid_this_month:string;
+	permissions:object;
+	custom_logo_url:object;
+	custom_logo_small_url:object;
+	configuration:EIuguConfiguration;
+	commissions:object;
+	early_payment_discounts:object[];
+	informations:EIuguInformation[];
+}

@@ -1,0 +1,29 @@
+
+export class EDeliveryProductInBasket{
+	id:string;
+	name:string;
+	brief:string;
+	quantity:number;
+	unitPrice?:number;
+	option1ID:string;
+	option2ID:string;
+	addon1ID:string;
+	addon2ID:string;
+	addon3ID:string;
+	option1Name:string;
+	option2Name:string;
+	addon1Name:string;
+	addon2Name:string;
+	addon3Name:string;
+	option1Price?:number;
+	option2Price?:number;
+	addon1Price?:number;
+	addon2Price?:number;
+	addon3Price?:number;
+	option1GroupName:string;
+	option2GroupName:string;
+	addon1GroupName:string;
+	addon2GroupName:string;
+	addon3GroupName:string;
+	comments:string;
+}

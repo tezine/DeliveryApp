@@ -1,0 +1,75 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Cadastramento</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list style="width: 90%;margin: auto">
+        <!--    <ion-item lines="none">-->
+        <!--      <ion-note>-->
+
+        <!--      </ion-note>-->
+        <!--    </ion-item>-->
+        <ion-item>
+            <ion-label position="floating">Nome</ion-label>
+            <ion-input [(ngModel)]="eBaseEntity.name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">E-mail</ion-label>
+            <ion-input [(ngModel)]="eBaseEntity.email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Celular</ion-label>
+            <ion-input [(ngModel)]="eBaseEntity.mobile"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Senha</ion-label>
+            <ion-input [(ngModel)]="eBaseEntity.password" type="password"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Repetir Senha</ion-label>
+            <ion-input [(ngModel)]="repeatPassword" type="password"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">CEP</ion-label>
+            <ion-input [(ngModel)]="eBaseAddress.postalCode" (ngModelChange)="onTxtPostalCodeFilled($event)"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="cepFound">
+            <ion-label position="floating">Rua</ion-label>
+            <ion-input [(ngModel)]="eBaseAddress.street" readonly></ion-input>
+        </ion-item>
+        <ion-item *ngIf="cepFound">
+            <ion-label position="floating">Número</ion-label>
+            <ion-input [(ngModel)]="eBaseAddress.number" readonly></ion-input>
+        </ion-item>
+        <ion-item *ngIf="cepFound">
+            <ion-label position="floating">Complemento</ion-label>
+            <ion-input [(ngModel)]="eBaseAddress.addressComplement" readonly></ion-input>
+        </ion-item>
+        <ion-item *ngIf="cepFound">
+            <ion-label position="floating">Estado</ion-label>
+            <ion-input [(ngModel)]="eBaseAddress.stateName" readonly></ion-input>
+        </ion-item>
+        <ion-item *ngIf="cepFound">
+            <ion-label position="floating">Cidade</ion-label>
+            <ion-input [(ngModel)]="eBaseAddress.cityName" readonly></ion-input>
+        </ion-item>
+        <!--      <ion-item>-->
+        <!--          <ion-label position="floating">Estado</ion-label>-->
+        <!--          <ion-select (ionChange)="onStateSelected($event)" cancelText="Cancelar" okText="OK" [(ngModel)]="eSelectedState" [compareWith]="compareWith">-->
+        <!--              <ion-select-option *ngFor="let eState of states" value="{{eState.id}}">{{eState.name}}</ion-select-option>-->
+        <!--          </ion-select>-->
+        <!--      </ion-item>-->
+        <ion-item lines="none">
+            <ion-label></ion-label>
+        </ion-item>
+        <ion-button ion-item expand="block" (click)="onBtnCreateUserClicked()">ENTRAR</ion-button>
+        <ion-progress-bar ion-item type="indeterminate" *ngIf="loading"></ion-progress-bar>
+    </ion-list>
+
+</ion-content>

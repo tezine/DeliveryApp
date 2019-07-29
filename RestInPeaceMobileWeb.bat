@@ -1,0 +1,1 @@
+"C:/Program Files/dotnet/dotnet.exe" C:/Projetos/RestInPeace/bin/Debug/netcoreapp2.1/RestInPeace.dll --type angular --rest-in-peace-version v2  --generate-entities true --backend C:/Projetos/SaberLab/Backend --frontend C:/Projetos/SaberLab/MobileWeb/src --additional-entities-folder C:/Projetos/Libs/ServerBase --additional-entities-folder-2 C:/Projetos/SaberLab/SharedLib

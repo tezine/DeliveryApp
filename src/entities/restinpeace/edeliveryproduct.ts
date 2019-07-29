@@ -1,0 +1,29 @@
+
+export class EDeliveryProduct{
+	id:string;
+	companyID:string;
+	categoryID:string;
+	name:string;
+	unitPrice?:number;
+	brief:string;
+	description:string;
+	available:boolean;
+	allowHalf:boolean;
+	option1ParentGroupID:string;
+	option2ParentGroupID:string;
+	option3ParentGroupID:string;
+	addon1ParentGroupID:string;
+	addon2ParentGroupID:string;
+	addon3ParentGroupID:string;
+	creationDateUTC:string;
+	modificationDateUTC:string;
+	pictureURL:string;
+	isCategory:boolean;
+	categoryName:string;
+	selectedQuantity:number;
+	option1ParentGroupName:string;
+	option2ParentGroupName:string;
+	addon1ParentGroupName:string;
+	addon2ParentGroupName:string;
+	addon3ParentGroupName:string;
+}

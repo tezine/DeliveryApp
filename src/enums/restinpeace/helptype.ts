@@ -1,0 +1,21 @@
+
+export enum HelpType {
+	DriverHomeMap= 1,
+	DriverMyPayments= 2,
+	DriverMyTrips= 3,
+	DriverMyQualifications= 4,
+	DriverSupport= 5,
+	DriverData= 6,
+	DriverVehicleData= 7,
+	DriverConfigPayment= 8,
+	DriverConfigNotifications= 9,
+	DriverMapToDest= 10,
+	UserHomeCategories= 100,
+	UserMyTrips= 101,
+	UserPaymentMethods= 102,
+	UserProfile= 103,
+	UserAddresses= 104,
+	UserHomeMap= 105,
+	UserHomeMapConfirmed= 106,
+	UserAddressEdit= 107,
+}
